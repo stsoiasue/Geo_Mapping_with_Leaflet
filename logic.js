@@ -78,7 +78,7 @@ d3.json(quakeURL, function(error, quakeData) {
         };
         
         // create layer with geoJSON 
-        var platesLayer = L.geoJSON(platesData)
+        var platesLayer = L.geoJSON(platesData);
         
         // create leaflet map
         var myMap = L.map("map", {
@@ -92,7 +92,7 @@ d3.json(quakeURL, function(error, quakeData) {
         var legend = L.control({
             position: "bottomright"
         });
-        
+
         legend.onAdd = function() {
             var div = L.DomUtil.create("div", "info legend");
 
@@ -126,16 +126,18 @@ d3.json(quakeURL, function(error, quakeData) {
         var overlayLayers = {
             "Earthquakes": quakesLayer,
             "Tectonic Plates": platesLayer
-        }
+        };
 
         var baseLayers ={
             "Dark Map": darkMap,
             "Light Map": lightMap,
             "Satellite Map": satMap
-        }
+        };
 
         L.control
             .layers(baseLayers, overlayLayers)
             .addTo(myMap)
-    })
-})
+    });
+});
+
+// var test = L.Timeline();
